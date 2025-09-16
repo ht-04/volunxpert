@@ -1,11 +1,10 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VolunXpert Landing</title>
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="css/style.css">
 <style>
 /* Landing Page Specific Styles */
 body.landing-page {
@@ -163,9 +162,9 @@ body.landing-page {
 
 <!-- Navbar -->
 <nav class="navbar">
-    <a href="{% url 'landing' %}" class="logo-text">VolunXpert</a>
+    <a href="index.html" class="logo-text">VolunXpert</a>
     <ul class="nav-links">
-        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="home.html">Home</a></li>
         <li><a href="#">About Us</a></li>
         <li><a href="#">Opportunities</a></li>
         <li><a href="#">FAQs</a></li>
@@ -181,8 +180,8 @@ body.landing-page {
         <p class="landing-subtitle">Start your journey now!</p>
     </div>
     <div class="landing-buttons">
-        <a href="{% url 'login' %}" class="btn-login">Login</a>
-        <a href="{% url 'signup' %}" class="btn-signup">Sign Up</a>
+        <a href="login.html" class="btn-login">Login</a>
+        <a href="signup.html" class="btn-signup">Sign Up</a>
     </div>
 </div>
 
