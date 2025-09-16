@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VolunXpert Dashboard</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<style>
+/* Navbar with logo on left, tabs on right */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004aad; /* blue */
+    padding: 15px 30px;
+}
+
+.navbar .logo-text {
+    font-size: 26px;
+    font-weight: bold;
+    color: #f4e3c9; /* beige */
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.nav-links li a:hover {
+    color: #f4e3c9; /* hover beige */
+    transition: 0.3s;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <a href="{% url 'dashboard' %}" class="logo-text">VolunXpert</a>
+    <ul class="nav-links">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Find Opportunities</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Achievements</a></li>
+        <li><a href="#">Career Test</a></li>
+        <li><a href="#">Contact Us</a></li>
+    </ul>
+</nav>
+
+<!-- Dashboard Content -->
+<main class="hero">
+    <h1>Welcome to VolunXpert!</h1>
+    <p>This is your dashboard. Here you will see your volunteering activities, achievements, and profile information in the future.</p>
+</main>
+
+<footer>
+    <p>&copy; 2025 VolunXpert. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

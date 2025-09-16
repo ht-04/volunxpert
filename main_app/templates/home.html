@@ -1,0 +1,227 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VolunXpert Home</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<style>
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004aad;
+    padding: 15px 30px;
+}
+
+.navbar .logo-text {
+    font-size: 26px;
+    font-weight: bold;
+    color: #f4e3c9;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.nav-links li a:hover {
+    color: #f4e3c9;
+    transition: 0.3s;
+}
+
+/* Bulletin board / slideshow */
+.bulletin-board {
+    width: 100%;
+    height: 250px;
+    margin-top: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* Slogan */
+.slogan {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #004aad;
+    margin: 40px 0 20px 0;
+}
+
+/* Interactive headings */
+.interactive-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+}
+
+.card {
+    background-color: white;
+    width: 220px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #004aad;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #333;
+    display: none; /* hidden initially */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #004aad;
+    color: #f4e3c9;
+    margin-top: 50px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .interactive-section {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <a href="{% url 'dashboard' %}" class="logo-text">VolunXpert</a>
+    <ul class="nav-links">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Opportunities</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Contact Us</a></li>
+    </ul>
+</nav>
+
+<!-- Bulletin Board -->
+<div class="bulletin-board">
+    <div class="slide active" style="background-image: url('{% static 'images/flood.jpg' %}');">
+        Volunteers needed for flood relief!
+    </div>
+    <div class="slide" style="background-image: url('{% static 'images/community.jpg' %}');">
+        Help communities and make a difference!
+    </div>
+    <div class="slide" style="background-image: url('{% static 'images/environment.jpg' %}');">
+        Join environmental clean-up events!
+    </div>
+</div>
+
+<!-- Slogan -->
+<div class="slogan">
+    Where every volunteer becomes an expert-volunteer
+</div>
+
+<!-- Interactive Headings -->
+<div class="interactive-section">
+    <div class="card">
+        <h3>Find Opportunities</h3>
+        <p>Discover countless volunteering opportunities near you and worldwide.</p>
+    </div>
+    <div class="card">
+        <h3>Career Test</h3>
+        <p>Unsure of your skills? Take our test to find your strengths and match volunteering options.</p>
+    </div>
+    <div class="card">
+        <h3>Certifications</h3>
+        <p>Earn certificates, credit hours, or even rewards for completed volunteering posts.</p>
+    </div>
+    <div class="card">
+        <h3>Keep Track of Progress</h3>
+        <p>Monitor your volunteering activity and progress over time.</p>
+    </div>
+    <div class="card">
+        <h3>Where to Begin</h3>
+        <p>Create an account, sign up, and start applying to volunteering opportunities easily.</p>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    Help the society and community by volunteering and making a difference.
+</footer>
+
+<script>
+// Simple slideshow
+let slides = document.querySelectorAll('.slide');
+let currentSlide = 0;
+
+function showNextSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+}
+
+setInterval(showNextSlide, 4000);
+
+// Interactive cards toggle
+const cards = document.querySelectorAll('.card');
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        const p = card.querySelector('p');
+        if(p.style.display === 'block') {
+            p.style.display = 'none';
+        } else {
+            p.style.display = 'block';
+        }
+    });
+});
+</script>
+
+</body>
+</html>

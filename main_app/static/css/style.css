@@ -1,0 +1,244 @@
+/* ==================== Global Styles ==================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f7f2; /* soft beige/neutral background */
+    color: #333;
+    box-sizing: border-box;
+}
+
+/* ==================== Navbar ==================== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #004aad; /* blue from logo */
+    padding: 0 50px;
+    height: 70px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* space between logo and links */
+}
+
+.navbar .logo-text {
+    font-size: 26px;
+    font-weight: bold;
+    color: #f4e3c9 !important; /* force beige */
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li + li::before {
+    content: "|";
+    margin: 0 10px;
+    color: white;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    padding: 0 5px;
+}
+
+.nav-links a:hover {
+    color: #f4e3c9;
+    transition: 0.3s;
+}
+
+/* ==================== Landing Hero Section ==================== */
+.landing-hero {
+    display: flex;
+    justify-content: center;
+    padding: 60px 40px;
+    background: linear-gradient(135deg, #004aad 0%, #f4e3c9 100%);
+    color: #f4e3c9;
+    border-radius: 12px;
+    margin: 20px auto;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+.landing-hero-content {
+    max-width: 700px; /* keeps text neat */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.landing-title {
+    font-size: 70px;
+    font-weight: bold;
+    color: #f4e3c9;
+    margin-bottom: 10px;
+}
+
+.landing-title span.blue {
+    color: #004aad;
+}
+
+.landing-slogan {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.landing-subtitle {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.cta-buttons a {
+    text-decoration: none;
+    padding: 16px 36px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-login {
+    background-color: #004aad;
+    color: white;
+}
+
+.btn-login:hover {
+    background-color: #003080;
+}
+
+.btn-signup {
+    background-color: #f4e3c9;
+    color: #004aad;
+}
+
+.btn-signup:hover {
+    background-color: #e1d4b8;
+}
+
+/* ==================== Forms (Login/Signup) ==================== */
+.login-container, .signup-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+    width: 380px;
+    margin: 40px auto;
+}
+
+.login-container h2, .signup-container h2 {
+    text-align: center;
+    color: #004aad;
+    margin-bottom: 25px;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #004aad;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #003080;
+}
+
+/* Links under forms */
+.links {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.links a {
+    color: #004aad;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.links a:hover {
+    color: #f4e3c9;
+}
+
+/* Signup/Login footer link */
+.signup-link, .login-link {
+    text-align: center;
+    margin-top: 18px;
+}
+
+.signup-link a, .login-link a {
+    color: #004aad;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signup-link a:hover, .login-link a:hover {
+    color: #f4e3c9;
+}
+
+/* ==================== Footer ==================== */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #004aad;
+    color: #f4e3c9;
+    margin-top: 50px;
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 768px) {
+    .landing-hero {
+        padding: 40px 20px;
+        border-radius: 8px;
+    }
+
+    .landing-hero-content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+}
